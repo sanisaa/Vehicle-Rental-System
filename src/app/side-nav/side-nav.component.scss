@@ -1,0 +1,15 @@
+:host {
+    display: block;
+  }
+  
+  mat-list-item {
+    &:hover {
+      background-color: rgba($color: rgb(21, 19, 19), $alpha: 0.1);
+      cursor: pointer;
+    }
+  
+    &.active {
+      background-color: rgba($color: rgb(21, 19, 19), $alpha: 0.1);
+    }
+  }
+  
