@@ -46,6 +46,8 @@ export class RegisterComponent {
       createdOn: '',
       fine: 0,
     };
+    
+  console.log('User Data:', user); 
     this.api.createAccount(user).subscribe({
       next: (res: any) => {
         console.log(res);
