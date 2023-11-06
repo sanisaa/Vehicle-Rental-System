@@ -62,4 +62,9 @@ export class ApiService {
   getAllVehicles(){
     return this.http.get<Vehicle[]>(this.baseApiUrl + '/api/Vehicle/GetAllVehicles');
   }
+  orderVehicle(userId: number, vehicleId: number){
+    return this.http.post(this.baseApiUrl + '/api/VehicleOrder/OrderVehicle/' + userId + '/' + vehicleId,{
+      responseType: 'text',
+    });
+  }
 }
