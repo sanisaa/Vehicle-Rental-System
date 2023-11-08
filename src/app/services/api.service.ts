@@ -1,8 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { map } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import { User, UserType, Vehicle } from '../models/models';
+import { Order, User, UserType, Vehicle } from '../models/models';
 import { VehiclesComponent } from '../vehicles/vehicles.component';
 
 @Injectable({
@@ -67,4 +68,50 @@ export class ApiService {
       responseType: 'text',
     });
   }
+  getUsersOrder(userId: number){
+    return this.http.get<Order[]>(this.baseApiUrl + '/api/OrderDisplay/GetUserOrders/' + userId);
+  }
+  getAllOrder(){
+    return this.http.get<Order[]>(this.baseApiUrl + '/api/OrderDisplay/GetAllOrders');
+  }
+  returnVehicle(vehicleId: string, userId: string){
+    return this.http.post(this.baseApiUrl + '/api/VehicleReturn/ReturnVehicle/' + vehicleId + '/' + userId,{
+      responseType:'text',
+    })
+  }
+  getAllUsers(){
+    return this.http.get<User[]>(this.baseApiUrl + '/api/User/GetAllUsers').pipe(
+      map((users) => {
+        return users.map((user)=> {
+          let temp: User = user;
+          temp.userType = user.userType == 0 ? UserType.USER : UserType.ADMIN
+          return temp;
+        });
+      })
+    );
+  }
+  blockUser(id: number) {
+    return this.http.get(this.baseApiUrl + '/api/User/ChangeBlockStatus/1/' + id, {
+      responseType: 'text',
+    });
+  }
+
+  unblockUser(id: number) {
+    return this.http.get(this.baseApiUrl + '/api/User/ChangeBlockStatus/0/' + id, {
+      responseType: 'text',
+    });
+  }
+
+  enableUser(id: number) {
+    return this.http.get(this.baseApiUrl + '/api/User/ChangeEnableStatus/1/' + id, {
+      responseType: 'text',
+    });
+  }
+
+  disableUser(id: number) {
+    return this.http.get(this.baseApiUrl + '/api/User/ChangeEnableStatus/0/' + id, {
+      responseType: 'text',
+    });
+  }
+
 }

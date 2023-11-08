@@ -13,6 +13,10 @@ export class SideNavComponent {
       link: 'vehicles',
     },
     {
+      title: 'My Order',
+      link: 'users/order',
+    },
+    {
       title: 'Manage Vehicles',
       link: 'maintenance',
     },
@@ -31,11 +35,7 @@ export class SideNavComponent {
     {
       title: 'All Orders',
       link: 'user/all-orders',
-    },
-    {
-      title: 'My Order',
-      link: 'user/order',
-    },
+    }
   
   ]
 }

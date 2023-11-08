@@ -14,6 +14,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
+import { OrderComponent } from './order/order.component';
+import { AllOrdersComponent } from './all-orders/all-orders.component';
+import { ReturnVehicleComponent } from './return-vehicle/return-vehicle.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 
 @NgModule({
@@ -25,6 +29,10 @@ import { JwtModule } from '@auth0/angular-jwt';
     LoginComponent,
     RegisterComponent,
     VehiclesComponent,
+    OrderComponent,
+    AllOrdersComponent,
+    ReturnVehicleComponent,
+    UserListComponent,
   ],
   //npm install @auth0/angular-jwt - for importing jwt
   imports: [

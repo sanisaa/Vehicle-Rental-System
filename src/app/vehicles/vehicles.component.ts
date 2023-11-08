@@ -1,8 +1,7 @@
-import { BlockGroup } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { iif } from 'rxjs';
 import { CategoryVehicles, Vehicle } from '../models/models';
 import { ApiService } from '../services/api.service';
+import { NgZone } from '@angular/core';
 
 @Component({
   selector: 'vehicles',
@@ -21,7 +20,7 @@ export class VehiclesComponent implements OnInit {
     'order',
   ];
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private ngZone: NgZone) {}
 
   ngOnInit(): void {
     this.api.getAllVehicles().subscribe({
@@ -94,18 +93,24 @@ export class VehiclesComponent implements OnInit {
     }
   }
 
-  orderVehicle(vehicle: Vehicle) {
-    let userid = this.api.getTokenUserInfo()?.id ?? 0;
-    this.api.orderVehicle(userid, vehicle.id).subscribe({
-      next: (res: any) => {
-        if (res === 'success') {
-          vehicle.available = false;
+ orderVehicle(vehicle: Vehicle) {
+  let userid = this.api.getTokenUserInfo()?.id ?? 0;
+  this.api.orderVehicle(userid, vehicle.id).subscribe({
+    next: (res: any) => {
+      if (res.success) {
+        // Find the index of the ordered vehicle in availableVehicles
+        const index = this.availableVehicles.findIndex(v => v.id === vehicle.id);
+        if (index !== -1) {
+          this.availableVehicles[index].available = false;     // Update the available property
+          this.updateList();       // Update the vehiclesToDisplay
+          this.ngZone.run(() => {});  // Run change detection explicitly
         }
-      },
-      error: (err: any) => console.log(err),
-    });
-    
-  }
+      }
+    },
+    error: (err: any) => console.log(err),
+  });
+}
+
 
   isBlocked() {
     let blocked = this.api.getTokenUserInfo()?.blocked ?? true;

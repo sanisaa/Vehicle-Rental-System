@@ -37,15 +37,16 @@ export interface Vehicle {
     vehicles: Vehicle[];
   }
   
-//   export interface Order {
-//     id: number;
-//     userid: number;
-//     name: string;
-//     bookid: number;
-//     booktitle: string;
-//     orderedon: string;
-//     returned: boolean;
-//   }
+  export interface Order {
+    id: number;
+    userid: number;
+    name: string;
+    orderedOn: string;
+    returned: boolean;
+    vehicleid: number;
+    vehicletitle: string;
+    
+  }
   
 //   export interface Category {
 //     name: string;
