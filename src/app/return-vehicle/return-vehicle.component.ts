@@ -22,6 +22,8 @@ export class ReturnVehicleComponent{
     let user = (this.vehicleForm.get('userId') as FormControl).value;
     this.api.returnVehicle(vehicle, user).subscribe(
       (res: any)=>{
+        console.log("Full message=", res);
+        console.log("Message=",res.message);
           if(res.message == 'success') this.status = 'Vehicle Returned';
           else this.status = res.message;
       }

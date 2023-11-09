@@ -1,0 +1,44 @@
+/* :host {
+    display: block;
+    margin: 3rem auto 0;
+    width: 90%;
+  }
+  
+  table {
+    width: 100%;
+  }
+   */
+
+   :host {
+    display: block;
+    margin: 3rem auto 0;
+    width: 90%;
+  }
+  h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+  
+    th {
+      background-color: #6D9886;
+      color: white;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  }
+  
+  

@@ -5,7 +5,7 @@ import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-all-orders',
   templateUrl: './all-orders.component.html',
-  styleUrls: ['./all-orders.component.css']
+  styleUrls: ['./all-orders.component.scss']
 })
 export class AllOrdersComponent implements OnInit{
   //You need two arrays if you are filtering. Here we are filtering pending, all and returned so two arrays

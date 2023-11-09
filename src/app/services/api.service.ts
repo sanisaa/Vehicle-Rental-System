@@ -113,5 +113,22 @@ export class ApiService {
       responseType: 'text',
     });
   }
+  insertVehicle(vehicle: any){
+    return this.http.post(this.baseApiUrl + '/api/Vehicle/InsertVehicle/', vehicle,{
+      responseType: 'text',
+    });
+  }
+  deleteVehicle(id: number){
+    return this.http.delete(this.baseApiUrl + '/api/Vehicle/DeleteVehicle/' +id, {
+      responseType: 'text',
+    });
+  }
+  insertCategory(category: string, subcategory: string) {
+    return this.http.post(
+      this.baseApiUrl + '/api/Vehicle/InsertCategory',
+      { category: category, subCategory: subcategory },
+      { responseType: 'text' }
+    );
+  }
 
 }

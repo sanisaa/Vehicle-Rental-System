@@ -4,7 +4,10 @@ import { AllOrdersComponent } from './all-orders/all-orders.component';
 import { adminAuthorizationGuard } from './auth-guard/admin-authorization.guard';
 import { AuthenticationGuard } from './guards/authentication.guard';
 import { LoginComponent } from './login/login.component';
+import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
+import { ManageVehiclesComponent } from './manage-vehicles/manage-vehicles.component';
 import { OrderComponent } from './order/order.component';
+import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { ReturnVehicleComponent } from './return-vehicle/return-vehicle.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -42,6 +45,18 @@ const routes: Routes = [
     path: 'user/list',
     component: UserListComponent,
     canActivate: [adminAuthorizationGuard]
+  },{
+    path: 'maintenance',
+    component: ManageVehiclesComponent,
+    canActivate: [adminAuthorizationGuard]
+  },{
+    path: 'categories',
+    component: ManageCategoriesComponent,
+    canActivate: [adminAuthorizationGuard]
+  },{
+    path: 'users/profile',
+    component: ProfileComponent,
+    canActivate: [AuthenticationGuard]
   }
 ];
 

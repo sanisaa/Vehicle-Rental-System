@@ -1,0 +1,48 @@
+:host {
+    display: flex;
+    width: 80%;
+    gap: 2rem;
+    margin: 3rem auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .add {
+    mat-card-content{
+      padding-top: 1rem;
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: flex-start;
+  
+      button {
+        width: 200px;
+        height: 50px;
+      }
+    }
+  }
+  
+  .delete {
+    mat-card-content {
+      margin: 0;
+      padding-top: 1rem;
+      mat-form-field {
+        width: 100%;
+      }
+    }
+    mat-card-actions {
+      button {
+        width: 100%;
+      }
+    }
+  }
+  mat-card-header {
+    background-color: #6D9886; // Updated background color
+    color: white;
+    border-radius: 8px 8px 0 0;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  

@@ -18,6 +18,9 @@ import { OrderComponent } from './order/order.component';
 import { AllOrdersComponent } from './all-orders/all-orders.component';
 import { ReturnVehicleComponent } from './return-vehicle/return-vehicle.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { ManageVehiclesComponent } from './manage-vehicles/manage-vehicles.component';
+import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -33,6 +36,9 @@ import { UserListComponent } from './user-list/user-list.component';
     AllOrdersComponent,
     ReturnVehicleComponent,
     UserListComponent,
+    ManageVehiclesComponent,
+    ManageCategoriesComponent,
+    ProfileComponent,
   ],
   //npm install @auth0/angular-jwt - for importing jwt
   imports: [

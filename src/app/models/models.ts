@@ -48,7 +48,8 @@ export interface Vehicle {
     
   }
   
-//   export interface Category {
-//     name: string;
-//     children?: Category[];
-//   }
+  export interface Category {
+    name: string;
+    children?: Category[];
+  }
+
