@@ -69,10 +69,10 @@ export class ApiService {
     });
   }
   getUsersOrder(userId: number){
-    return this.http.get<Order[]>(this.baseApiUrl + '/api/OrderDisplay/GetUserOrders/' + userId);
+    return this.http.get<Order[]>(this.baseApiUrl + '/api/VehicleOrder/GetUserOrders/' + userId);
   }
   getAllOrder(){
-    return this.http.get<Order[]>(this.baseApiUrl + '/api/OrderDisplay/GetAllOrders');
+    return this.http.get<Order[]>(this.baseApiUrl + '/api/VehicleOrder/GetAllOrders');
   }
   returnVehicle(vehicleId: string, userId: string){
     return this.http.post(this.baseApiUrl + '/api/VehicleReturn/ReturnVehicle/' + vehicleId + '/' + userId,{
