@@ -10,7 +10,7 @@ import { ApiService } from '../services/api.service';
 export class OrderComponent implements OnInit{
 
   listOfOrders: Order[] = []; //for backend
-  columns: string[] = ['id', 'name', 'orderedOn', 'returned', 'vehicleId', 'vehicleName']
+  columns: string[] = ['id', 'name', 'orderedOn', 'returned', 'vehicleId', 'vehicleName','status']
 
   constructor(private api: ApiService){}
 

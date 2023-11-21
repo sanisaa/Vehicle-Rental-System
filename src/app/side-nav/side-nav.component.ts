@@ -15,6 +15,10 @@ export class SideNavComponent {
     {
       title: 'My Order',
       link: 'users/order',
+    },{
+      title: 'Verify Orders',
+      link: 'verify/order'
+
     },
     {
       title: 'Manage Vehicles',

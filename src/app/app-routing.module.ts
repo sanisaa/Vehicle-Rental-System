@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { ReturnVehicleComponent } from './return-vehicle/return-vehicle.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
+import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
   },{
     path: 'users/profile',
     component: ProfileComponent,
+    canActivate: [AuthenticationGuard]
+  },{
+    path: 'verify/order',
+    component: AdminVerificationComponent,
     canActivate: [AuthenticationGuard]
   }
 ];

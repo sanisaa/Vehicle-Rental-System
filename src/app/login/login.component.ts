@@ -37,7 +37,7 @@ export class LoginComponent {
         else {
           this.responseMsg = '';
           this.api.saveToken(res.toString());
-          let isActive = this.api.getTokenUserInfo()?.active ?? false;
+          let isActive = this.api.getTokenUserInfo()?.active ?? false; //if active not available default to false
           if (isActive) this.router.navigateByUrl('vehicles');
           else {
             this.responseMsg = 'You are not Active!';

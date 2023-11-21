@@ -29,7 +29,7 @@ export class ApiService {
     });
   }
   saveToken(token: string) {
-    localStorage.setItem('access_token', token);
+    localStorage.setItem('access_token', token);    //key=access_token, 
   }
 
   isLoggedIn(): boolean {
@@ -73,6 +73,19 @@ export class ApiService {
   }
   getAllOrder(){
     return this.http.get<Order[]>(this.baseApiUrl + '/api/VehicleOrder/GetAllOrders');
+  }
+  verifyOrder(){
+    return this.http.get<Order[]>(this.baseApiUrl + '/api/VehicleOrder/VerifyOrders');
+  }
+  acceptOrder(order: Order){
+    return this.http.post(this.baseApiUrl + '/api/VehicleOrder/AcceptOrder', order,{
+      responseType: 'text',
+    });
+  }
+  rejectOrder(order: Order){
+    return this.http.post(this.baseApiUrl + '/api/VehicleOrder/RejectOrder', order,{
+      responseType: 'text',
+    });
   }
   returnVehicle(vehicleId: string, userId: string){
     return this.http.post(this.baseApiUrl + '/api/VehicleReturn/ReturnVehicle/' + vehicleId + '/' + userId,{

@@ -21,6 +21,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { ManageVehiclesComponent } from './manage-vehicles/manage-vehicles.component';
 import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ProfileComponent } from './profile/profile.component';
     ManageVehiclesComponent,
     ManageCategoriesComponent,
     ProfileComponent,
+    AdminVerificationComponent,
   ],
   //npm install @auth0/angular-jwt - for importing jwt
   imports: [

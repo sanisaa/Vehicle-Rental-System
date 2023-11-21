@@ -43,8 +43,10 @@ export interface Vehicle {
     name: string;
     orderedOn: string;
     returned: boolean;
+    status: number;
     vehicleid: number;
     vehicletitle: string;
+    orderId: number;
     
   }
   

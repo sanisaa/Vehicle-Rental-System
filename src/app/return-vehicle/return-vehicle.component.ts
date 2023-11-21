@@ -24,8 +24,11 @@ export class ReturnVehicleComponent{
       (res: any)=>{
         console.log("Full message=", res);
         console.log("Message=",res.message);
-          if(res.message == 'success') this.status = 'Vehicle Returned';
-          else this.status = res.message;
+          if(res.message == 'success'){
+             this.status = 'Vehicle Returned';
+          }else {
+            this.status = 'Please Enter the details correctly';
+          }
       }
     );
   }
