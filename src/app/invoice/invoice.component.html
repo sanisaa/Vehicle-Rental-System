@@ -1,0 +1,31 @@
+
+<div *ngIf="orderDetails" class="invoice-container" #invoiceContent>
+  <h2 class="invoice-header">Invoice Details</h2>
+  <table class="invoice-table">
+    <tr>
+      <th>ID</th>
+      <th>Order Id</th>
+      <th>UserId</th>
+      <th>Name</th>
+      <th>Ordered On</th>
+      <th>Vehicle ID</th>
+      <th>Vehicle Name</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <td>{{ orderDetails.id }}</td>
+      <td>{{ orderDetails.orderId }}</td>
+      <td>{{ orderDetails.userId }}</td>
+      <td>{{ orderDetails.name }}</td>
+      <td>{{ orderDetails.orderedOn }}</td>
+      <td>{{ orderDetails.vehicleId }}</td>
+      <td>{{ orderDetails.vehicleName }}</td>
+      <td>{{ orderDetails.price }}</td>
+    </tr>
+    <tr>
+      <td colspan="7" style="text-align: right;">Total Price:</td>
+      <td>{{ orderDetails.price }}</td>
+    </tr>
+  </table>
+</div>
+<button class="download-button" (click)="generatePDF()">Download Invoice</button>

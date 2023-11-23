@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import { Order, User, UserType, Vehicle } from '../models/models';
+import { Invoice, Order, User, UserType, Vehicle } from '../models/models';
 import { VehiclesComponent } from '../vehicles/vehicles.component';
 
 @Injectable({
@@ -73,6 +73,9 @@ export class ApiService {
   }
   getAllOrder(){
     return this.http.get<Order[]>(this.baseApiUrl + '/api/VehicleOrder/GetAllOrders');
+  }
+  getOrderById(orderId: number){
+    return this.http.get<Invoice[]>(this.baseApiUrl + '/api/VehicleOrder/GetOrdersById/' + orderId);
   }
   verifyOrder(){
     return this.http.get<Order[]>(this.baseApiUrl + '/api/VehicleOrder/VerifyOrders');

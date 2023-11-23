@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryVehicles, Vehicle } from '../models/models';
 import { ApiService } from '../services/api.service';
 import { NgZone } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PopUpComponent } from '../pop-up/pop-up.component';
 
 @Component({
   selector: 'vehicles',
@@ -20,7 +22,7 @@ export class VehiclesComponent implements OnInit {
     'order',
   ];
 
-  constructor(private api: ApiService, private ngZone: NgZone) {}
+  constructor(private api: ApiService, private ngZone: NgZone, private dialogRef : MatDialog) {}
 
   ngOnInit(): void {
     this.api.getAllVehicles().subscribe({
@@ -104,6 +106,7 @@ export class VehiclesComponent implements OnInit {
           this.availableVehicles[index].available = false;     // Update the available property
           this.updateList();       // Update the vehiclesToDisplay
           this.ngZone.run(() => {});  // Run change detection explicitly
+          this.openDialog();
         }
       }
     },
@@ -115,5 +118,8 @@ export class VehiclesComponent implements OnInit {
   isBlocked() {
     let blocked = this.api.getTokenUserInfo()?.blocked ?? true;
     return blocked;
+  }
+  openDialog(){
+    this.dialogRef.open(PopUpComponent);
   }
 }

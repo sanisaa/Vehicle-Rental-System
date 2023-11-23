@@ -22,6 +22,9 @@ import { ManageVehiclesComponent } from './manage-vehicles/manage-vehicles.compo
 import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PopUpComponent } from './pop-up/pop-up.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 
 @NgModule({
@@ -41,6 +44,8 @@ import { AdminVerificationComponent } from './admin-verification/admin-verificat
     ManageCategoriesComponent,
     ProfileComponent,
     AdminVerificationComponent,
+    PopUpComponent,
+    InvoiceComponent,
   ],
   //npm install @auth0/angular-jwt - for importing jwt
   imports: [
@@ -50,6 +55,7 @@ import { AdminVerificationComponent } from './admin-verification/admin-verificat
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatDialogModule,
     JwtModule.forRoot({
       config: {
       tokenGetter: () => {

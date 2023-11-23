@@ -13,6 +13,7 @@ import { ReturnVehicleComponent } from './return-vehicle/return-vehicle.componen
 import { UserListComponent } from './user-list/user-list.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   },{
     path: 'verify/order',
     component: AdminVerificationComponent,
+    canActivate: [AuthenticationGuard]
+  },{
+    path: 'invoice/:orderId',
+    component: InvoiceComponent,
     canActivate: [AuthenticationGuard]
   }
 ];

@@ -47,6 +47,7 @@ export interface Vehicle {
     vehicleid: number;
     vehicletitle: string;
     orderId: number;
+    price: number;
     
   }
   
@@ -54,4 +55,18 @@ export interface Vehicle {
     name: string;
     children?: Category[];
   }
+  export interface Invoice {
+    id: number;
+    userId: number;
+    name: string;
+    orderedOn: string;
+    returned: boolean;
+    status: number;
+    vehicleId: number;
+    vehicleName: string;
+    orderId: number;
+    price: number;
+    
+  }
+ 
 
