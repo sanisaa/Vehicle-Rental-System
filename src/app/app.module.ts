@@ -25,6 +25,7 @@ import { AdminVerificationComponent } from './admin-verification/admin-verificat
 import { MatDialogModule } from '@angular/material/dialog';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
     AdminVerificationComponent,
     PopUpComponent,
     InvoiceComponent,
+    AboutComponent,
   ],
   //npm install @auth0/angular-jwt - for importing jwt
   imports: [

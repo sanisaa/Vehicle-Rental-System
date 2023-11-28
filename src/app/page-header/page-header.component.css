@@ -1,16 +1,46 @@
 :host {
-    display: block;
-    z-index: 3;
-  }
-  
-  mat-toolbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #171f1b;
-    color: white;
-  }
-  
-  mat-toolbar .user-info {
+  display: block;
+  z-index: 3;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  background-color: #34495e;
+  color: white;
+}
+
+.menulist {
+  display: flex; 
+  align-items: center; 
+}
+
+.menulist a {
+  margin-right: 1rem;
+  color: white; 
+  text-decoration: none; 
+}
+
+.menulist a:hover {
+  text-decoration: underline; 
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto; 
+}
+
+.user-info span {
+  margin-right: 0.5rem;
+}
+
+.user-info mat-icon {
+  transform: scale(1.4);
+}
+
+  /* mat-toolbar .user-info {
     display: flex;
     align-items: center;
   }
@@ -22,4 +52,4 @@
   mat-toolbar .user-info mat-icon {
     transform: scale(1.4);
   }
-  
+   */

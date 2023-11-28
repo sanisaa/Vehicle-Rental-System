@@ -49,7 +49,7 @@ export class AdminVerificationComponent {
           order.status = 1;
           this.responseMsg= 'Order Accepted';
           console.log('OrderAccepted');
-        // window.location.reload();
+     
           
         }else{
           console.error("Order Acceptance Failed");

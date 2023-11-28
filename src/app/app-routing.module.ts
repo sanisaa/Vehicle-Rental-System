@@ -14,6 +14,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,9 @@ const routes: Routes = [
     path: 'invoice/:orderId',
     component: InvoiceComponent,
     canActivate: [AuthenticationGuard]
+  },{
+    path: 'about',
+    component: AboutComponent
   }
 ];
 

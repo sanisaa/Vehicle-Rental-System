@@ -2,17 +2,22 @@
     <button mat-icon-button (click)="menuClicked.emit()">
         <mat-icon>menu</mat-icon>
     </button>
-    <h1>Vehicle Rental System</h1>
-
-    <div class="user-info">
-        <span>
-            Hi,
-            {{this.api.getTokenUserInfo()?.firstName | titlecase}}
-        </span>
-        <button mat-icon-button [matMenuTriggerFor]="userMenu">
-            <mat-icon>account_circle</mat-icon>
-        </button>
+    <!-- <h1>Vehicle Rental System</h1> -->
+    <span *ngIf="api.isLoggedIn()">
+        Hi
+        {{this.api.getTokenUserInfo()?.firstName | titlecase}}
+    </span>
+   
+    <div class ="menulist">
+        <a routerLink="/vehicles">Home</a>
+        <a routerLink="/about">About</a>
+        <div class="user-info">
+            <button mat-icon-button [matMenuTriggerFor]="userMenu">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+        </div>
     </div>
+    
 
     <mat-menu #userMenu="matMenu">
         <button mat-menu-item *ngIf="!api.isLoggedIn()" routerLink="/login">

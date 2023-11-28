@@ -32,42 +32,10 @@ export class OrderComponent implements OnInit{
   }
 
 
-
-  // generatePDF(orderId: number) {
-  //   this.orderId = orderId;
-  //   console.log("order Id", this.orderId);
-  
-  //   this.api.getOrderById(orderId).subscribe(
-  //     (res: Order[]) => {
-  //       const order = res.length > 0 ? res[0] : null; // Check if the array is not empty
-  
-  //       if (order) {
-  //         console.log("Data For Invoice", order);
-  
-  //         let docDefinition = {
-  //           content: [
-  //             { text: 'Invoice Details', style: 'header' },
-  //             { text: `Order ID: ${order.orderId}`, style: 'subheader' },
-  //             { text: `Customer Name: ${order.name}` },
-  //             { text: `Ordered On: ${order.orderedOn}` },
-  //             { text: `Price: ${order.price}` },
-  //             // Add more properties as needed
-  
-  //         ],}
-  //         pdfMake.createPdf(docDefinition).open();
-  //       } else {
-  //         console.error("No data found for the specified order ID");
-  //       }
-  //     },
-  //     (error) => {
-  //       console.error("Error fetching order details", error);
-  //     }
-  //   );
-  // }
   
   ViewInvoice(orderId: number) {
     this.orderId = orderId;
-    // Navigate to the 'invoice' route and pass the orderId as a parameter
+
     this.router.navigate(['/invoice', this.orderId]);
   }
   
