@@ -68,5 +68,11 @@ export interface Vehicle {
     price: number;
     
   }
+  export interface Feedback{
+    id: number;
+    uid: number;
+    name: string;
+    feedback: string;
+  }
  
 

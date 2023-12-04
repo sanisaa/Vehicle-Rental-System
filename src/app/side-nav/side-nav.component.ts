@@ -17,6 +17,10 @@ export class SideNavComponent {
       title: 'My Order',
       link: 'users/order',
     },{
+      title: 'Give Feedback',
+      link: 'addfeedbacks',
+    },
+    {
       title: 'Verify Orders',
       link: 'verify/order'
 
@@ -40,6 +44,9 @@ export class SideNavComponent {
     {
       title: 'All Orders',
       link: 'user/all-orders',
+    },{
+      title: 'View Feedbacks',
+      link: 'feedbacks'
     }
   
   ]

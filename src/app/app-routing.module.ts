@@ -15,6 +15,8 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AdminVerificationComponent } from './admin-verification/admin-verification.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { AboutComponent } from './about/about.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 
 const routes: Routes = [
   {
@@ -71,6 +73,14 @@ const routes: Routes = [
   },{
     path: 'about',
     component: AboutComponent
+  },{
+    path: 'feedbacks',
+    component: FeedbacksComponent,
+    canActivate: [adminAuthorizationGuard]
+  },{
+    path: 'addfeedbacks',
+    component: AddFeedbackComponent,
+    canActivate: [AuthenticationGuard]
   }
 ];
 

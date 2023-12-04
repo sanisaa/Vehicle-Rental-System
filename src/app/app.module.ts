@@ -26,6 +26,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { AboutComponent } from './about/about.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 
 
 @NgModule({
@@ -48,6 +50,8 @@ import { AboutComponent } from './about/about.component';
     PopUpComponent,
     InvoiceComponent,
     AboutComponent,
+    FeedbacksComponent,
+    AddFeedbackComponent,
   ],
   //npm install @auth0/angular-jwt - for importing jwt
   imports: [

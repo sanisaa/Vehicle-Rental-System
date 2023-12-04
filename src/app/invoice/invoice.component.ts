@@ -7,6 +7,7 @@ import * as pdfMake from 'pdfmake/build/pdfmake';
 import html2canvas from 'html2canvas';
 import { style } from '@angular/animations';
 
+import { catchError, retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-invoice',

@@ -1,9 +1,10 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { textAlign } from 'html2canvas/dist/types/css/property-descriptors/text-align';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import { Invoice, Order, User, UserType, Vehicle } from '../models/models';
+import { Feedback, Invoice, Order, User, UserType, Vehicle } from '../models/models';
 import { VehiclesComponent } from '../vehicles/vehicles.component';
 
 @Injectable({
@@ -89,6 +90,14 @@ export class ApiService {
     return this.http.post(this.baseApiUrl + '/api/VehicleOrder/RejectOrder', order,{
       responseType: 'text',
     });
+  }
+  addFeedback(userId: number, feedback: string){
+    return this.http.post<any>(this.baseApiUrl + '/api/User/Feedback?userId='+userId+'&feedback='+feedback,{
+      responseType: 'text',
+    });
+  }
+  getAllFeedback(){
+    return this.http.get<Feedback[]>(this.baseApiUrl + '/api/User/GetFeedback');
   }
   returnVehicle(vehicleId: string, userId: string){
     return this.http.post(this.baseApiUrl + '/api/VehicleReturn/ReturnVehicle/' + vehicleId + '/' + userId,{
